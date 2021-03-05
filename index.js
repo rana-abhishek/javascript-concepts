@@ -1,17 +1,9 @@
-const consumeInputData = (e) => {
-  console.log("API call with input values", e.target.value);
-};
+catName("noddy");
 
-const debouncing = (fn, d) => {
-  let timeout;
-  return function () {
-    const context = this,
-      args = arguments;
-    clearTimeout(timeout);
-    timeout = setTimeout(() => {
-      fn.apply(context, args);
-    }, d);
-  };
-};
+function catName(name) {
+  console.log("My dog's name is " + name);
+}
 
-const keyUpHandler = debouncing(consumeInputData, 300);
+x = 6;
+
+console.log(x);
