@@ -1,19 +1,17 @@
-const grandparentClickHandler = document
-  .querySelector("#grandparent")
-  .addEventListener("click", () => {
-    console.log("Grandparent input clicked");
-  });
+const consumeInputData = (e) => {
+  console.log("API call with input values", e.target.value);
+};
 
-const parentClickHandler = document.querySelector("#parent").addEventListener(
-  "click",
-  () => {
-    console.log("parent input clicked");
-  },
-  true
-);
+const debouncing = (fn, d) => {
+  let timeout;
+  return function () {
+    const context = this,
+      args = arguments;
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      fn.apply(context, args);
+    }, d);
+  };
+};
 
-const childClickHandler = document
-  .querySelector("#child")
-  .addEventListener("click", () => {
-    console.log("Child input clicked");
-  });
+const keyUpHandler = debouncing(consumeInputData, 300);
