@@ -1,0 +1,21 @@
+div {
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#grandparent {
+  height: 150px;
+  width: 150px;
+}
+
+#parent {
+  height: 100px;
+  width: 100px;
+}
+
+#child {
+  height: 50px;
+  width: 50px;
+}
