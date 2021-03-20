@@ -1,3 +1,5 @@
+console.log('Console log');
+
 const grandparentClickHandler = document
   .querySelector("#grandparent")
   .addEventListener("click", () => {
